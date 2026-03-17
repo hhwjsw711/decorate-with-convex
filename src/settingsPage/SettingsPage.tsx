@@ -13,14 +13,14 @@ export default function SettingsPage() {
   const [isUpdating, setIsUpdating] = useState(false);
 
   const handleImageModelChange = async (
-    newModel: "openai/gpt-image-1" | "google/gemini-2.5-flash-image-preview"
+    newModel: "openai/gpt-image-1" | "google/gemini-2.5-flash-image-preview",
   ) => {
     setIsUpdating(true);
     try {
       await updateSettings({ imageModel: newModel });
-      toast.success("Settings updated successfully");
+      toast.success("设置更新成功");
     } catch (error) {
-      toast.error("Failed to update settings");
+      toast.error("设置更新失败");
       console.error("Error updating settings:", error);
     } finally {
       setIsUpdating(false);
@@ -31,7 +31,7 @@ export default function SettingsPage() {
     return (
       <div className="flex-1 p-6">
         <div className="max-w-2xl mx-auto">
-          <h1 className="text-2xl font-bold mb-6">Settings</h1>
+          <h1 className="text-2xl font-bold mb-6">设置</h1>
           <Card className="p-6">
             <div className="animate-pulse">
               <div className="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
@@ -48,9 +48,9 @@ export default function SettingsPage() {
     return (
       <div className="flex-1 p-6">
         <div className="max-w-2xl mx-auto">
-          <h1 className="text-2xl font-bold mb-6">Settings</h1>
+          <h1 className="text-2xl font-bold mb-6">设置</h1>
           <Card className="p-6">
-            <p className="text-gray-600">Not authenticated</p>
+            <p className="text-gray-600">未登录</p>
           </Card>
         </div>
       </div>
@@ -60,14 +60,14 @@ export default function SettingsPage() {
   return (
     <div className="flex-1 p-6 ">
       <div className="max-w-2xl mx-auto mb-14">
-        <h1 className="text-2xl font-bold mb-6">Settings</h1>
+        <h1 className="text-2xl font-bold mb-6">设置</h1>
 
         <Card className="p-6 mb-6">
-          <h2 className="text-xl font-semibold mb-4">User Information</h2>
+          <h2 className="text-xl font-semibold mb-4">用户信息</h2>
           <div className="space-y-3">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                User ID
+                用户 ID
               </label>
               <p className="text-sm text-gray-900 font-mono bg-gray-50 p-2 rounded">
                 {user._id}
@@ -77,7 +77,7 @@ export default function SettingsPage() {
             {user.email && (
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Email
+                  邮箱
                 </label>
                 <p className="text-sm text-gray-900">{user.email}</p>
               </div>
@@ -86,7 +86,7 @@ export default function SettingsPage() {
             {user.name && (
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Name
+                  名称
                 </label>
                 <p className="text-sm text-gray-900">{user.name}</p>
               </div>
@@ -94,10 +94,10 @@ export default function SettingsPage() {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Account Created
+                账号创建时间
               </label>
               <p className="text-sm text-gray-900">
-                {new Date(user._creationTime).toLocaleDateString("en-US", {
+                {new Date(user._creationTime).toLocaleDateString("zh-CN", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
@@ -110,13 +110,11 @@ export default function SettingsPage() {
         </Card>
 
         <Card className="p-6">
-          <h2 className="text-xl font-semibold mb-4">
-            Image Generation Settings
-          </h2>
+          <h2 className="text-xl font-semibold mb-4">图片生成设置</h2>
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-3">
-                Image Model
+                图片模型
               </label>
               <div className="space-y-2">
                 <div className="flex items-center">
@@ -131,7 +129,7 @@ export default function SettingsPage() {
                     }
                     onChange={() =>
                       handleImageModelChange(
-                        "google/gemini-2.5-flash-image-preview"
+                        "google/gemini-2.5-flash-image-preview",
                       )
                     }
                     disabled={isUpdating}
@@ -141,7 +139,7 @@ export default function SettingsPage() {
                     htmlFor="google-model"
                     className="text-sm text-gray-900"
                   >
-                    Google Gemini 2.5 Flash (Default)
+                    Google Gemini 2.5 Flash（默认）
                   </label>
                 </div>
                 <div className="flex items-center">
@@ -166,7 +164,7 @@ export default function SettingsPage() {
                 </div>
               </div>
               <p className="text-xs text-gray-500 mt-2">
-                Current selection:{" "}
+                当前选择：{" "}
                 <span className="font-medium">{userSettings.imageModel}</span>
               </p>
             </div>
@@ -174,7 +172,7 @@ export default function SettingsPage() {
         </Card>
 
         <Card className="p-6 mt-6">
-          <h2 className="text-xl font-semibold mb-4">Account Actions</h2>
+          <h2 className="text-xl font-semibold mb-4">账号操作</h2>
           <div className="flex justify-start">
             <SignOutButton />
           </div>

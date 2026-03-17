@@ -5,8 +5,8 @@ export default function ConvexCorner() {
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-0 left-0 z-50 group"
-      aria-label="Made with Convex"
-      title="Made with Convex"
+      aria-label="使用 Convex 构建"
+      title="使用 Convex 构建"
     >
       <svg
         width="80"

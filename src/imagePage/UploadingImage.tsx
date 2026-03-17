@@ -12,13 +12,13 @@ export function UploadingImage({ imageId }: UploadingImageProps) {
   if (!objectUrl) {
     return (
       <div className="animate-pulse bg-gray-200 h-80 w-full rounded-2xl flex items-center justify-center">
-        <span className="text-lg text-gray-500">Uploading...</span>
+        <span className="text-lg text-gray-500">上传中...</span>
       </div>
     );
   }
 
   return (
-    <ImageViewer src={objectUrl} alt="Uploading preview">
+    <ImageViewer src={objectUrl} alt="上传预览">
       <div className="absolute top-4 right-4">
         <div className="animate-spin rounded-full h-10 w-10 border-4 border-t-blue-500 border-gray-200 bg-white/70"></div>
       </div>

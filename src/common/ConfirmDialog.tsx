@@ -13,10 +13,10 @@ interface ConfirmDialogProps {
 
 export function ConfirmDialog({
   open,
-  title = "Are you sure?",
+  title = "确定吗？",
   message,
-  confirmLabel = "Confirm",
-  cancelLabel = "Cancel",
+  confirmLabel = "确定",
+  cancelLabel = "取消",
   onConfirm,
   onCancel,
 }: ConfirmDialogProps) {
@@ -50,7 +50,7 @@ export function ConfirmDialog({
         <button
           className="absolute top-2 right-2 z-10 bg-white rounded-full p-2 shadow border border-gray-200 hover:bg-blue-50 transition-colors"
           onClick={onCancel}
-          aria-label="Close dialog"
+          aria-label="关闭对话框"
         >
           <svg
             width="24"

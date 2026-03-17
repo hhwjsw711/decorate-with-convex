@@ -48,7 +48,7 @@ export function RegenerateModal({
         <button
           className="absolute top-2 right-2 z-10 bg-white rounded-full p-2 shadow border border-gray-200 hover:bg-blue-50 transition-colors"
           onClick={onCancel}
-          aria-label="Close dialog"
+          aria-label="关闭对话框"
         >
           <svg
             width="24"
@@ -67,12 +67,11 @@ export function RegenerateModal({
         </button>
 
         <h3 className="text-lg font-semibold text-slate-800 mb-4 text-center">
-          Choose Base Image
+          选择基础图片
         </h3>
 
         <p className="text-gray-600 text-center mb-6 text-sm">
-          Which image would you like to use as the starting point for
-          regeneration?
+          您想用哪张图片作为重新生成的起点？
         </p>
 
         <div className="flex flex-col gap-4 mb-6 overflow-y-auto flex-1">
@@ -84,11 +83,11 @@ export function RegenerateModal({
           >
             <img
               src={originalImageUrl}
-              alt="Original"
+              alt="原图"
               className="w-full h-32 object-cover rounded-lg mb-2"
             />
             <span className="text-sm font-medium text-gray-700 group-hover:text-blue-700">
-              Original Image
+              原图
             </span>
           </button>
 
@@ -99,17 +98,17 @@ export function RegenerateModal({
           >
             <img
               src={decoratedImageUrl}
-              alt="Decorated"
+              alt="装饰图"
               className="w-full h-32 object-cover rounded-lg mb-2"
             />
             <span className="text-sm font-medium text-gray-700 group-hover:text-blue-700">
-              Decorated Image
+              装饰图
             </span>
           </button>
         </div>
 
         <Button variant="secondary" fullWidth onClick={onCancel}>
-          Cancel
+          取消
         </Button>
       </div>
 

@@ -25,8 +25,8 @@ export function SignInForm({
           void signIn("password", formData).catch((_error) => {
             const toastTitle =
               flow === "signIn"
-                ? "Could not sign in, did you mean to sign up?"
-                : "Could not sign up, did you mean to sign in?";
+                ? "登录失败，您是否想要注册？"
+                : "注册失败，您是否想要登录？";
             toast.error(toastTitle);
             setSubmitting(false);
           });
@@ -35,14 +35,14 @@ export function SignInForm({
         <InputField
           type="email"
           name="email"
-          placeholder="Email"
+          placeholder="邮箱"
           required
           autoComplete="email"
         />
         <InputField
           type="password"
           name="password"
-          placeholder="Password"
+          placeholder="密码"
           required
           autoComplete="current-password"
         />
@@ -53,24 +53,20 @@ export function SignInForm({
             className="self-end text-xs"
             onClick={onForgotPassword}
           >
-            Forgot password?
+            忘记密码？
           </Button>
         )}
         <Button variant="primary" fullWidth type="submit" disabled={submitting}>
-          {flow === "signIn" ? "Sign in" : "Sign up"}
+          {flow === "signIn" ? "登录" : "注册"}
         </Button>
         <div className="text-center text-sm text-slate-600">
-          <span>
-            {flow === "signIn"
-              ? "Don't have an account? "
-              : "Already have an account? "}
-          </span>
+          <span>{flow === "signIn" ? "还没有账号？" : "已有账号？"}</span>
           <Button
             variant="link"
             type="button"
             onClick={() => setFlow(flow === "signIn" ? "signUp" : "signIn")}
           >
-            {flow === "signIn" ? "Sign up instead" : "Sign in instead"}
+            {flow === "signIn" ? "去注册" : "去登录"}
           </Button>
         </div>
       </form>

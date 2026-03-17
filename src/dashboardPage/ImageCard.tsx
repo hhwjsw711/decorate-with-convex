@@ -10,16 +10,16 @@ export function ImageCard({ image }: ImageCardProps) {
   let statusLabel = "";
   let statusColor = "";
   if (image.status.kind === "uploading") {
-    statusLabel = "Uploading";
+    statusLabel = "上传中";
     statusColor = "bg-gray-200 text-gray-700 border-gray-300";
   } else if (image.status.kind === "uploaded") {
-    statusLabel = "Uploaded";
+    statusLabel = "已上传";
     statusColor = "bg-blue-100 text-blue-700 border-blue-200";
   } else if (image.status.kind === "generating") {
-    statusLabel = "Generating";
+    statusLabel = "生成中";
     statusColor = "bg-yellow-100 text-yellow-800 border-yellow-300";
   } else if (image.status.kind === "generated") {
-    statusLabel = "Complete";
+    statusLabel = "已完成";
     statusColor = "bg-green-100 text-green-700 border-green-200";
   }
 
@@ -49,13 +49,13 @@ export function ImageCard({ image }: ImageCardProps) {
       {/* Image(s) */}
       {image.status.kind === "uploading" && (
         <div className="animate-pulse bg-gray-200 h-48 rounded-lg flex items-center justify-center w-full">
-          <span className="text-lg text-gray-500">Uploading...</span>
+          <span className="text-lg text-gray-500">上传中...</span>
         </div>
       )}
       {image.status.kind === "uploaded" && (
         <img
           src={image.status.image.url}
-          alt="Original"
+          alt="原图"
           className="w-full h-48 object-cover rounded-lg"
         />
       )}
@@ -63,14 +63,12 @@ export function ImageCard({ image }: ImageCardProps) {
         <div className="relative w-full h-48 flex items-center justify-center">
           <img
             src={image.status.image.url}
-            alt="Original"
+            alt="原图"
             className="w-full h-48 object-cover rounded-lg opacity-60"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 rounded-lg z-10">
             <div className="animate-spin rounded-full h-8 w-8 border-4 border-t-blue-400 border-gray-200 mb-2 bg-white/70"></div>
-            <span className="text-sm text-white font-semibold">
-              Generating...
-            </span>
+            <span className="text-sm text-white font-semibold">生成中...</span>
           </div>
         </div>
       )}
@@ -78,12 +76,12 @@ export function ImageCard({ image }: ImageCardProps) {
         <div className="grid grid-cols-2 gap-2">
           <img
             src={image.status.image.url}
-            alt="Original"
+            alt="原图"
             className="w-full h-24 object-cover rounded-lg"
           />
           <img
             src={image.status.decoratedImage.url}
-            alt="Decorated"
+            alt="装饰图"
             className="w-full h-24 object-cover rounded-lg"
           />
         </div>

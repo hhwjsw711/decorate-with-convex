@@ -18,7 +18,7 @@ export function setUploadingImageObjectUrl(imageId: string, objectUrl: string) {
 }
 
 export function getUploadingImageObjectUrl(
-  imageId: string
+  imageId: string,
 ): string | undefined {
   return uploadingImageObjectUrls[imageId];
 }
@@ -33,7 +33,7 @@ export function clearUploadingImageObjectUrl(imageId: string) {
 export async function resizeAndConvertImage(
   file: File,
   maxWidth = 2048,
-  maxHeight = 2048
+  maxHeight = 2048,
 ): Promise<Blob> {
   return new Promise((resolve, reject) => {
     const img = new window.Image();
@@ -67,7 +67,7 @@ export async function resizeAndConvertImage(
           resolve(blob);
         },
         mimeType,
-        0.92 // quality
+        0.92, // quality
       );
     };
     img.onerror = reject;
@@ -89,7 +89,7 @@ export function useImageUpload() {
         file.name.replace(/\.[^.]+$/, ".webp"),
         {
           type: processedBlob.type,
-        }
+        },
       );
       const { uploadUrl, imageId } = await generateUploadUrl();
       // Store object URL for use in ImagePage (from processed blob)
@@ -106,7 +106,7 @@ export function useImageUpload() {
       await markUploaded({ imageId, storageId });
       // Clear object URL after upload is complete
       clearUploadingImageObjectUrl(imageId);
-      toast.success("Image uploaded successfully!");
+      toast.success("图片上传成功！");
     } catch (error) {
       onApiError(error);
     }

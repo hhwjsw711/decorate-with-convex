@@ -13,7 +13,7 @@ export function SignOutButton() {
 
   return (
     <Button variant="primary" onClick={() => void signOut()}>
-      Sign out
+      退出登录
     </Button>
   );
 }

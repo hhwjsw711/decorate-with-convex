@@ -48,7 +48,7 @@ export function FullscreenModal({
         <button
           className="absolute top-2 right-2 z-10 bg-white rounded-full p-2 shadow border border-gray-200 hover:bg-blue-50 transition-colors"
           onClick={onClose}
-          aria-label="Close modal"
+          aria-label="关闭弹窗"
         >
           <svg
             width="24"

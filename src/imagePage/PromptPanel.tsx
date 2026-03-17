@@ -14,8 +14,7 @@ interface PromptPanelProps {
   image: Doc<"images">;
 }
 
-const defaultPrompt =
-  "Please decorate this so it looks like a professional interior decorator has designed it";
+const defaultPrompt = "请装饰这张图片，使其看起来像是专业室内设计师设计的";
 
 export function PromptPanel({ image }: PromptPanelProps) {
   const canGenerate =
@@ -48,9 +47,7 @@ export function PromptPanel({ image }: PromptPanelProps) {
 
   const handleGenerate = () => {
     if (!canGenerate) {
-      toast.error(
-        "Please wait for the image to finish uploading before generating."
-      );
+      toast.error("请等待图片上传完成后再进行生成。");
       return;
     }
 
@@ -88,10 +85,10 @@ export function PromptPanel({ image }: PromptPanelProps) {
     <div className="flex flex-col justify-between w-full md:w-1/2 md:max-w-[500px] max-w-full bg-white r p-8 pb-[100px] md:p-12 overflow-y-auto min-h-[320px] border-r border-[var(--color-border)]">
       <ConfirmDialog
         open={showConfirm}
-        title="Delete image"
-        message="Are you sure you want to delete this image? This action cannot be undone."
-        confirmLabel="Delete"
-        cancelLabel="Cancel"
+        title="删除图片"
+        message="确定要删除这张图片吗？此操作无法撤销。"
+        confirmLabel="删除"
+        cancelLabel="取消"
         onConfirm={handleConfirmDelete}
         onCancel={() => setShowConfirm(false)}
       />
@@ -112,9 +109,9 @@ export function PromptPanel({ image }: PromptPanelProps) {
         onCancel={() => setShowRegenerateModal(false)}
       />
       <div>
-        <h2 className="text-2xl font-bold mb-4 text-slate-800">Image Prompt</h2>
+        <h2 className="text-2xl font-bold mb-4 text-slate-800">图片提示词</h2>
         <p className="text-sm text-gray-500 mb-4">
-          Enter a description of how you want your image to be decorated.
+          输入您希望图片如何被装饰的描述。
         </p>
         <textarea
           id="prompt"
@@ -137,15 +134,15 @@ export function PromptPanel({ image }: PromptPanelProps) {
           disabled={!canGenerate}
           onClick={handleGenerate}
         >
-          {currentPrompt ? "Re-generate" : "Generate"}
+          {currentPrompt ? "重新生成" : "生成"}
         </Button>
         <Button
           variant="danger"
           fullWidth
           onClick={handleDelete}
-          aria-label="Delete"
+          aria-label="删除"
         >
-          Delete image
+          删除图片
         </Button>
       </div>
     </div>

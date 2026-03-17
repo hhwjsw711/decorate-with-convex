@@ -5,7 +5,7 @@ export default function GitHubCorner() {
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-0 right-0 z-50 group"
-      aria-label="View source on GitHub"
+      aria-label="在 GitHub 上查看源码"
     >
       <svg
         width="80"

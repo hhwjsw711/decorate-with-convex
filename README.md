@@ -1,73 +1,73 @@
-![screenshot](./media/screenshot.jpg)
+![截图](./media/screenshot.jpg)
 
-# Decorate with Convex
+# Convex 图片装饰
 
-A real-time image decoration application that allows users to upload images and get AI-generated decorated versions. Built with Convex, React, and TypeScript.
+一个实时图片装饰应用，允许用户上传图片并获取 AI 生成的装饰版本。基于 Convex、React 和 TypeScript 构建。
 
-## Features
+## 功能特性
 
-- Upload images via drag & drop or file selection
-- Mobile camera support for image capture
-- Real-time status updates for image processing
-- User authentication
-- Secure file storage using Convex Storage
-- Responsive design for desktop and mobile
-- Side-by-side image comparison
+- 通过拖放或文件选择上传图片
+- 支持移动端相机拍照
+- 图片处理的实时状态更新
+- 用户身份认证
+- 使用 Convex Storage 进行安全的文件存储
+- 响应式设计，支持桌面端和移动端
+- 并排图片对比
 
-## Tech Stack
+## 技术栈
 
-- Convex - Backend, Database, and File Storage
-- React + Vite - Frontend Framework
-- TypeScript - Type Safety
-- TailwindCSS - Styling
-- type-route - Type-safe Routing
+- Convex - 后端、数据库和文件存储
+- React + Vite - 前端框架
+- TypeScript - 类型安全
+- TailwindCSS - 样式
+- type-route - 类型安全路由
 
-## Setup
+## 安装配置
 
-1. Clone the repository
+1. 克隆仓库
 
-2. Install dependencies:
+2. 安装依赖：
    ```bash
    bun install
    ```
-3. Start the dev server which will create the `.env.local` file
+3. 启动开发服务器，将自动创建 `.env.local` 文件
 
    ```bash
    bun dev
    ```
 
-4. Set the OpenAI API key:
+4. 设置 OpenAI API 密钥：
 
    ```bash
-   bun convex env set OPEN_API_KEY <your-key>
-   bun convex env set GEMINI_API_KEY <your-key>
+   bun convex env set OPEN_API_KEY <你的密钥>
+   bun convex env set GEMINI_API_KEY <你的密钥>
    ```
 
-5. Run the typescript type-cheker in another terminal window
+5. 在另一个终端窗口运行 TypeScript 类型检查
 
 ```bash
 bun dev:ts
 ```
 
-5. Visit `http://localhost:5173` in your browser
+5. 在浏览器中访问 `http://localhost:5173`
 
-## Development Flow
+## 开发流程
 
-1. Upload an image through the drop zone or file selector
-2. The image is resized and uploaded to Convex Storage
-3. The system processes the image through several states:
-   - uploading: Initial file upload to Convex Storage
-   - uploaded: File successfully stored
-   - generating: AI decoration in progress
-   - generated: Final decorated image available
+1. 通过拖放区域或文件选择器上传图片
+2. 图片会被调整大小并上传到 Convex Storage
+3. 系统会通过以下状态处理图片：
+   - uploading：初始文件上传到 Convex Storage
+   - uploaded：文件成功存储
+   - generating：AI 装饰进行中
+   - generated：最终装饰图片已可用
 
-## Project Structure
+## 项目结构
 
-- `/convex` - Backend logic and database schema
-- `/src` - Frontend React application
-- `/public` - Static assets
-- `/shared` - Shared types and utilities
+- `/convex` - 后端逻辑和数据库模式
+- `/src` - 前端 React 应用
+- `/public` - 静态资源
+- `/shared` - 共享类型和工具函数
 
-## License
+## 许可证
 
 MIT

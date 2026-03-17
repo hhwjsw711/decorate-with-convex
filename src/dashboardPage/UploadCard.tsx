@@ -37,13 +37,9 @@ export function UploadCard({
       <div className="flex flex-col items-center gap-4">
         <div className="text-5xl text-blue-400 mb-2">📸</div>
         <div>
-          <p className="text-2xl font-bold text-slate-800 mb-1">
-            Upload your image
-          </p>
+          <p className="text-2xl font-bold text-slate-800 mb-1">上传您的图片</p>
           <p className="text-base text-gray-500 mb-2">
-            {mobile
-              ? "Choose from gallery or take a photo"
-              : "Drag & drop or select a file to get started"}
+            {mobile ? "从相册选择或拍照" : "拖放或选择文件以开始"}
           </p>
           <div className={`mt-2 ${mobile ? "flex flex-col gap-2" : ""}`}>
             {/* Gallery/File picker */}
@@ -59,7 +55,7 @@ export function UploadCard({
                   onUpload(file);
                 }}
               />
-              <span className="button px-6 py-2">Select a file</span>
+              <span className="button px-6 py-2">选择文件</span>
             </label>
           </div>
         </div>

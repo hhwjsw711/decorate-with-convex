@@ -24,7 +24,7 @@ export function ImageViewer({
         className={`relative cursor-zoom-in ${className} rounded-2xl overflow-hidden`}
         tabIndex={0}
         role="button"
-        aria-label="View image fullscreen"
+        aria-label="全屏查看图片"
         onClick={() => setOpen(true)}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") setOpen(true);

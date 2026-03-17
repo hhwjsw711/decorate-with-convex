@@ -21,30 +21,30 @@ export function PasswordReset({
         formData.set("email", email);
         signIn("password", formData)
           .then(() => {
-            toast.success("Check your email for a verification code.");
+            toast.success("请查收邮件获取验证码。");
             setStep({ email });
           })
           .catch((error) => {
             console.error(error);
             const errorMessage = error.message || `${error}`;
-            toast.error(`Failed to send verification code: ${errorMessage}`);
+            toast.error(`发送验证码失败：${errorMessage}`);
           });
       }}
       className="flex flex-col gap-4"
     >
       <label htmlFor="reset-email" className="text-sm font-medium">
-        Email address
+        邮箱地址
       </label>
       <InputField
         id="reset-email"
         name="email"
-        placeholder="Email"
+        placeholder="邮箱"
         type="text"
         autoComplete="email"
       />
       <input name="flow" type="hidden" value="reset" />
       <Button type="submit" variant="primary">
-        Send code
+        发送验证码
       </Button>
       {onBackToSignIn && (
         <Button
@@ -53,7 +53,7 @@ export function PasswordReset({
           onClick={onBackToSignIn}
           className="self-end text-xs"
         >
-          Back to sign in
+          返回登录
         </Button>
       )}
     </form>
@@ -68,26 +68,31 @@ export function PasswordReset({
       className="flex flex-col gap-4"
     >
       <label htmlFor="reset-code" className="text-sm font-medium">
-        Verification code (from the email we sent you)
+        验证码（来自我们发送的邮件）
       </label>
-      <InputField id="reset-code" name="code" placeholder="Code" type="text" />
+      <InputField
+        id="reset-code"
+        name="code"
+        placeholder="验证码"
+        type="text"
+      />
       <label htmlFor="reset-password" className="text-sm font-medium">
-        New password
+        新密码
       </label>
       <InputField
         id="reset-password"
         name="newPassword"
-        placeholder="New password"
+        placeholder="新密码"
         type="password"
         autoComplete="new-password"
       />
       <input name="email" value={step.email} type="hidden" />
       <input name="flow" value="reset-verification" type="hidden" />
       <Button type="submit" variant="primary">
-        Continue
+        继续
       </Button>
       <Button type="button" variant="link" onClick={() => setStep("forgot")}>
-        Cancel
+        取消
       </Button>
       {onBackToSignIn && (
         <Button
@@ -96,7 +101,7 @@ export function PasswordReset({
           onClick={onBackToSignIn}
           className="self-end text-xs"
         >
-          Back to sign in
+          返回登录
         </Button>
       )}
     </form>

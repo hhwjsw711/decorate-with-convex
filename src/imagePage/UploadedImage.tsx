@@ -5,5 +5,5 @@ interface UploadedImageProps {
 }
 
 export function UploadedImage({ imageUrl }: UploadedImageProps) {
-  return <ImageViewer src={imageUrl} alt="Uploaded" />;
+  return <ImageViewer src={imageUrl} alt="已上传" />;
 }

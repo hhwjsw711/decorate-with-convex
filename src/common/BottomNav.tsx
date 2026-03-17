@@ -27,23 +27,23 @@ export const BottomNav: React.FC<Props> = ({}) => {
         variant="link"
         className={cn(
           "flex flex-col items-center text-xs font-medium",
-          route.name === "dashboard" ? "accent-text" : "text-gray-400"
+          route.name === "dashboard" ? "accent-text" : "text-gray-400",
         )}
         onClick={() => routes.dashboard().push()}
       >
         <LayoutDashboard className="w-6 h-6 mb-1" />
-        <span>Dashboard</span>
+        <span>仪表盘</span>
       </Button>
       <Button
         variant="link"
         className={cn(
           "flex flex-col items-center text-xs font-medium",
-          route.name === "image" ? "accent-text" : "text-gray-400"
+          route.name === "image" ? "accent-text" : "text-gray-400",
         )}
         onClick={handleUploadButtonClick}
       >
         <ImagePlus className="w-6 h-6 mb-1" />
-        <span>Upload</span>
+        <span>上传</span>
       </Button>
       <input
         ref={uploadInputRef}

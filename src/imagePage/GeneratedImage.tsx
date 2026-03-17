@@ -22,7 +22,7 @@ export function GeneratedImage({
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center">
       <Tabs
-        tabs={["Original", "Decorated"]}
+        tabs={["原图", "装饰图"]}
         selectedIndex={tabIndex}
         onTabChange={setTabIndex}
       />
@@ -36,8 +36,8 @@ export function GeneratedImage({
                 `${currentImageType}-image.webp`
               }
               className="absolute top-2 right-2 z-2 bg-white/80 rounded-full p-2 shadow border border-gray-200 hover:bg-blue-50 transition-colors"
-              title={`Download ${currentImageType} image`}
-              aria-label={`Download ${currentImageType} image`}
+              title={`下载${currentImageType === "original" ? "原图" : "装饰图"}`}
+              aria-label={`下载${currentImageType === "original" ? "原图" : "装饰图"}`}
               onClick={(e) => e.stopPropagation()}
             >
               <Download className="w-5 h-5 text-blue-600" />

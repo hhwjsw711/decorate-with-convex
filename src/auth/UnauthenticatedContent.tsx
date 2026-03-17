@@ -17,9 +17,9 @@ export const UnauthenticatedContent: React.FC<Props> = ({}) => {
             className="h-16 w-auto max-w-[220px] mb-4"
           />
           {showReset ? (
-            <p className="text-xl text-slate-600">Reset password</p>
+            <p className="text-xl text-slate-600">重置密码</p>
           ) : (
-            <p className="text-xl text-slate-600">Sign in to get started</p>
+            <p className="text-xl text-slate-600">登录以开始使用</p>
           )}
         </div>
         {showReset ? (
