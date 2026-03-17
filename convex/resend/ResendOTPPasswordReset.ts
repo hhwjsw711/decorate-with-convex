@@ -12,7 +12,7 @@ export const ResendOTPPasswordReset = Resend({
     const resend = new ResendAPI(provider.apiKey);
 
     const { error } = await resend.emails.send({
-      from: "Decorate with Convex <decorate-with-convex@mikecann.blog>",
+      from: "Decorate with Convex <decorate-with-convex@isllm.com>",
       to: [email],
       subject: `Reset your password in Decorate with Convex`,
       text: "Your password reset code is " + token,
